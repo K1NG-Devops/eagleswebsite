@@ -1,15 +1,19 @@
-// src/components/Navbar.jsx
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  return (
-    <nav style={{ padding: "1rem", background: "#f0f0f0" }}>
-      <Link to="/">Home</Link> |{" "}
-      <Link to="/about">About</Link> |{" "}
-      <Link to="/admission">Admission</Link> |{" "}
-      <Link to="/contact">Contact</Link>
-    </nav>
-  );
-};
+const Navbar = () => (
+  <nav className="bg-white-100 p-4 shadow-md flex items-center">
+    <div className="flex items-center justify-between w-full px-6">
+      <Link to="/" className="text-2xl font-bold text-blue-800">Young Eagles</Link>
+      <ul className="flex space-x-6 text-gray-600 font-semibold">
+        <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
+        <li><Link to="/about" className="hover:text-blue-600">About Us</Link></li>
+        <li><Link to="/admission" className="hover:text-blue-600">Admission</Link></li>
+        <li><Link to="/programs" className="hover:text-blue-600">Our Programs</Link></li>
+        <li><Link to="/contact" className="hover:text-blue-600">Contact</Link></li>
+      </ul>
+    </div>
+  </nav>
+);
 
 export default Navbar;
