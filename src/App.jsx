@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 import Admission from "./pages/Admission";
 import Layout from "./components/Layout";
 import './App.css'
-import youngEaglesLogo from './assets/youngeagles-logo.png' // Import your logo
+// import youngEaglesLogo from './assets/youngeagles-logo.png' // Import your logo
 
 function App() {
   return (
