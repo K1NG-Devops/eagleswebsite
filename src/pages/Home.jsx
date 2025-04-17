@@ -4,6 +4,9 @@ const Home = () => (
       <p className="mt-6 text-center text-gray-600 text-lg max-w-2xl mx-auto">
         We provide a nurturing and safe environment for children to grow, learn, and thrive.
       </p>
+      <div className="mt-8 flex justify-center">
+        <h1>Coming Soon</h1>
+        </div>
     </div>
   );
 export default Home;
