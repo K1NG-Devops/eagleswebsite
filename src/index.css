@@ -77,10 +77,23 @@ button:focus-visible {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #f3ebeb;
   }
+
+  li {
+    color: rgb(2, 26, 63);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    color: #0f0f1b;
+    text-decoration: none;
+  }
+  
   a:hover {
-    color: #747bff;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: inherit;
   }
   button {
     background-color: #f9f9f9;
