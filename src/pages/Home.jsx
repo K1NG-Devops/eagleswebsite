@@ -1,4 +1,5 @@
 import React from 'react';
+import image from '../assets/society-5.0.png';
 
 
 const Home = () => (
@@ -7,7 +8,7 @@ const Home = () => (
       <header className='flex justify-center mb-6 text-5xl font-bold text-blue-900 transition duration-500 ease-in-out'>
         <h1>Introducing Society 5.0</h1>
       </header>
-      <img src='src/assets/society-5.0.png' alt="Society 5.0" className="w-[60%] mx-auto rounded-lg shadow-md mb-6" />
+      <img src={image} alt="Society 5.0" loading='lazy' className="w-[60%] mx-auto rounded-lg shadow-md mb-6" />
       <p className="text-lg text-gray-700 mb-4">
         Society 5.0 is a human-centered society that balances economic advancement with the resolution of social problems by a system that highly integrates cyberspace and physical space.
         It is a vision for the future where technology and society work together to create a better world for all.
