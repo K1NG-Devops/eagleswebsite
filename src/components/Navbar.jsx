@@ -1,21 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RiCloseCircleFill } from "react-icons/ri";
 
-const Navbar = () => (
-  <nav className="navbar bg-black-500 px-5 rounded-box shadow-base-300/20 shadow-sm bg-gray-900 sm:hidden" aria-label="Main Navigation">
-    <div className="w-full md:flex md:items-center md:gap-2">
-      <div className="flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-blue-800">Young Eagles</Link>
-        <ul className="flex items-center justify-between space-x-4">
-          <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
-          <li><Link to="/about" className="hover:text-blue-600">About</Link></li>
-          <li><Link to="/programs" className="hover:text-blue-600">Programs</Link></li>
-          <li><Link to="/admission" className="hover:text-blue-600">Admission</Link></li>
-          <li><Link to="/contact" className="hover:text-blue-600">Contact</Link></li>
+const styles = {
+  link: "hover:text-white hover:bg-blue-500 transition-colors duration-700 px-2 py-1 rounded-lg",
+};
+
+function Navbar() {
+  const [IsMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!IsMenuOpen);
+  }
+  return (
+    <nav className="navbar top-0 left-0 w-full z-50 bg-base-100 text-base-content shadow-md md:bg-slate-50">
+      <div className="w-full max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-blue-700 dark:text-blue-500 flex items-center gap-2">
+          Young Eagles
+        </Link>
+        {/* Desktop Nav */}
+        <ul className="flex gap-x-4 hidden md:flex">
+          <li><Link to="/" className={styles.link}>Home</Link></li>
+          <li><Link to="/" className={styles.link}>About</Link></li>
+          <li><Link to="/" className={styles.link}>Programs</Link></li>
+          <li><Link to="/" className={styles.link}>Admission</Link></li>
+          <li><Link to="/" className={styles.link}>Contact</Link></li>
         </ul>
+        <div className="cursor-pointer md:hidden">
+          {IsMenuOpen ? (
+            <RiCloseCircleFill className="h-6 w-6" onClick={toggleMenu}/>
+          ) : (
+            <GiHamburgerMenu className="h-6 w-6" onClick={toggleMenu}/>
+          )}
+        </div>
       </div>
-    </div>
-  </nav>
-);
+      {IsMenuOpen && (
+        <ul className="md:hidden flex flex-col gap-y-6 text-center ">
+          <li><Link to="/" className={`${styles.link} block`}>Home</Link></li>
+          <li><Link to="/" className={`${styles.link} block`}>About</Link></li>
+          <li><Link to="/" className={`${styles.link} block`}>Programs</Link></li>
+          <li><Link to="/" className={`${styles.link} block`}>Admission</Link></li>
+          <li><Link to="/" className={`${styles.link} block`}>Contact</Link></li>
+        </ul>
+      )}
+    </nav>
+  )
+}
 
-export default Navbar;
+export default Navbar
