@@ -15,7 +15,7 @@ function Navbar() {
     setIsMenuOpen(!IsMenuOpen);
   }
   return (
-    <nav className="navbar top-0 left-0 w-full z-50 bg-base-100 text-base-content shadow-md md:bg-slate-50">
+    <nav className="navbar top-0 sticky left-0 w-full z-50 bg-base-100 text-base-content shadow-md md:bg-slate-50">
       <div className="w-full max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-blue-700 dark:text-blue-500 flex items-center gap-2">
@@ -31,19 +31,19 @@ function Navbar() {
         </ul>
         <div className="cursor-pointer md:hidden">
           {IsMenuOpen ? (
-            <RiCloseCircleFill className="h-6 w-6" onClick={toggleMenu}/>
+            <RiCloseCircleFill className="h-6 w-6" onClick={toggleMenu} />
           ) : (
-            <GiHamburgerMenu className="h-6 w-6" onClick={toggleMenu}/>
+            <GiHamburgerMenu className="h-6 w-6" onClick={toggleMenu} />
           )}
         </div>
       </div>
       {IsMenuOpen && (
-        <ul className="md:hidden flex flex-col gap-y-6 text-center ">
-          <li><Link to="/" className={`${styles.link} block`}>Home</Link></li>
-          <li><Link to="/" className={`${styles.link} block`}>About</Link></li>
-          <li><Link to="/" className={`${styles.link} block`}>Programs</Link></li>
-          <li><Link to="/" className={`${styles.link} block`}>Admission</Link></li>
-          <li><Link to="/" className={`${styles.link} block`}>Contact</Link></li>
+        <ul className="md:hidden flex flex-col gap-y-6 text-center">
+          <li><Link to="/" className={`${styles.link} block`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="about" className={`${styles.link} block`} onClick={() => setIsMenuOpen(false)}>About</Link></li>
+          <li><Link to="programs" className={`${styles.link} block`} onClick={() => setIsMenuOpen(false)}>Programs</Link></li>
+          <li><Link to="admission" className={`${styles.link} block`} onClick={() => setIsMenuOpen(false)}>Admission</Link></li>
+          <li><Link to="contact" className={`${styles.link} block`} onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
         </ul>
       )}
     </nav>
