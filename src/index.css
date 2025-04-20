@@ -1,15 +1,19 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(238, 70, 70, 0.87);
-  background-color: #e2e5e7;
+  background-color: #e3e7e2;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,85 +21,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #0711be;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  overflow: auto;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-  padding: 5px;
-  margin: 0;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.8em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #557db8;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #f3ebeb;
-  }
-
-  li {
-    color: rgb(2, 26, 63);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  a {
-    color: #0f0f1b;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    background-color: #ffffff;
-    border-radius: 8px;
-    color: inherit;
-  }
-  button {
-    background-color: #f9f9f9;
+    background-color: #f7f6f6;
   }
 }
